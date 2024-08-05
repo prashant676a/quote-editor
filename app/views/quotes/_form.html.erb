@@ -1,0 +1,21 @@
+<%= simple_form_for quote, html: { class: "space-y-4" } do |f| %>
+  <% if quote.errors.any? %>
+    <div class="bg-red-100 border border-red-300 text-red-700 p-4 rounded-lg mb-4">
+      <%= quote.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div class="border border-gray-300 rounded-lg p-4 bg-white shadow-md">
+  <div class="flex items-center space-x-4">
+    <div class="flex-1">
+      <%= f.input :name, input_html: { autofocus: true }, label: false, 
+        input_html: { class: "border border-gray-300 rounded-lg p-2 w-full" } %>
+    </div>
+    <%= link_to "Cancel", quotes_path, class: "btn bg-red-400 text-white p-3 rounded hover:bg-green-800" %>
+    <%= f.submit class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+  </div>
+</div>
+
+</div>
+
+<% end %>

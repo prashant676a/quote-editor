@@ -1,0 +1,19 @@
+<header class="navbar bg-gray-800 text-white p-4 flex justify-between items-center">
+  <% if user_signed_in? %>
+    <div class="navbar__brand text-xl font-semibold">
+      <%= current_company.name %>
+    </div>
+    <div class="navbar__name text-lg">
+        <%= current_user.email %>
+      
+    </div>
+    <%= button_to "Sign out",
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: "btn bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300" %>
+  <% else %>
+    <%= link_to "Sign in",
+                new_user_session_path,
+                class: "btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300" %>
+  <% end %>
+</header>

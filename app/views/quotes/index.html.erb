@@ -1,0 +1,23 @@
+<%= turbo_stream_from current_company, "quotes" %>
+<main class="container mx-auto p-4">
+
+  <%# turbo_frame_tag "first_turbo_frame" do %>
+    <div class="border border-gray-300 rounded-lg p-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold">Quotes</h1>
+      <%= link_to "New quote",
+                  new_quote_path,
+                  data: {turbo_frame: dom_id(Quote.new)},
+                  # data: {turbo_frame: "_top" }, "second" targets another frame 
+                  class: "btn btn--primary bg-blue-500 text-white px-4 py-2 rounded" %>
+    </div>
+  <%# end %>
+
+  <%= turbo_frame_tag Quote.new %>
+
+  <%= turbo_frame_tag "quotes" do%>
+    <%= render @quotes %>
+  <% end %>
+</main>
+
+
+<!-- data-turbo-frame="_top" means whole body part of page-->

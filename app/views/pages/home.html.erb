@@ -1,0 +1,16 @@
+<main class="flex flex-col h-[80vh] mx-auto p-6 border border-gray-300 rounded-lg shadow-md max-w-lg bg-white mt-10">
+  <!-- Container for heading and description -->
+  <div class="flex flex-col items-center mb-6">
+    <h1 class="text-3xl font-bold mb-4 text-gray-800 text-center">Quote Editor</h1>
+    <p class="text-lg mb-6 text-gray-600 text-center">A blazing fast quote editor built with Hotwire</p>
+  </div>
+
+  <!-- Centered button section -->
+  <div class="flex-grow flex items-center justify-center">
+    <% if user_signed_in? %>
+      <%= link_to "View quotes", quotes_path, class: "bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    <% end %>
+  </div>
+</main>

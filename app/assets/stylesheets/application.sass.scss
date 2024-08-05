@@ -1,0 +1,7 @@
+// Entry point for your Sass build
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Your existing SCSS styles can go here
+@import "components/navbar";

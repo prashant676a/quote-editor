@@ -1,0 +1,9 @@
+<main class="container mx-auto p-4">
+  <%= link_to sanitize("&larr; Back to quotes"), quotes_path, class: "text-blue-600 hover:underline mb-4 inline-block" %>
+
+  <div class="border border-gray-200 rounded-lg p-4 bg-white shadow-md">
+    <h1 class="text-3xl font-bold mb-4">
+      <%= @quote.name %>
+    </h1>
+  </div>
+</main>
